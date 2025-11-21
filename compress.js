@@ -33,7 +33,7 @@ async function compressImage(inputPath) {
 }
 
 async function main() {
-  const images = ['Frame_5-removebg-preview.png', 'Group_3-removebg-preview.png'];
+  const images = ['Frame_5-removebg-preview.png', 'Group_3-removebg-preview.png', 'image.png'];
   
   for (const image of images) {
     if (fs.existsSync(image)) {
