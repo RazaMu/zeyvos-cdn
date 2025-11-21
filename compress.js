@@ -17,10 +17,16 @@ async function compressImage(inputPath) {
   const maxWidth = 600;
   let resizeWidth = originalWidth > maxWidth ? maxWidth : originalWidth;
   
-  // Create rounded corners SVG overlay
+  // Calculate the new dimensions after resize
+  let newWidth = resizeWidth;
+  let newHeight = originalWidth > maxWidth 
+    ? Math.round(originalHeight * (maxWidth / originalWidth))
+    : originalHeight;
+  
+  // Create rounded corners SVG overlay with correct dimensions
   const roundedCorners = Buffer.from(`
-    <svg>
-      <rect x="0" y="0" width="${metadata.width}" height="${metadata.height}" rx="10" ry="10"/>
+    <svg width="${newWidth}" height="${newHeight}">
+      <rect x="0" y="0" width="${newWidth}" height="${newHeight}" rx="10" ry="10"/>
     </svg>
   `);
   
