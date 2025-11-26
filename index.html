@@ -32,6 +32,25 @@
         .asset-list a:hover {
             text-decoration: underline;
         }
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .asset-card {
+            background: #f5f5f5;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .asset-card code {
+            font-family: monospace;
+            word-break: break-all;
+            color: #333;
+        }
         img {
             max-width: 100%;
             margin: 20px 0;
@@ -62,5 +81,67 @@
         <h3>image.png</h3>
         <img src="image.png" alt="Image">
     </div>
+
+    <h2>Comment Card Images</h2>
+    <p>Direct links to themed comment card assets stored under <code>comment-cards-images/</code>:</p>
+    <ul class="asset-list" id="comment-cards-list"></ul>
+    <div class="asset-grid" id="comment-cards-grid"></div>
+
+    <script>
+        const commentCardFiles = [
+            "Brutalist.png",
+            "Chat-Bubble.png",
+            "Classic-Dark.png",
+            "Code-Editor.png",
+            "Compact-Line.png",
+            "Cyberpunk.png",
+            "Expert.png",
+            "Glass-Overlay.png",
+            "Gradient-Border.png",
+            "Handwritten.png",
+            "Minimalist.png",
+            "Neomorphism.png",
+            "Newspaper.png",
+            "Notification.png",
+            "Playful-Bubble.png",
+            "Retro-Windows.png",
+            "Review.png",
+            "RPG-Dialog.png",
+            "Terminal.png",
+            "Ticket-Stub.png",
+            "TikTok-Drawer.png",
+            "TikTok-Gift.png",
+            "TikTok-Live-Bubble.png",
+            "TikTok-Overlay.png",
+            "TikTok-Pinned.png"
+        ];
+
+        const listEl = document.getElementById("comment-cards-list");
+        const gridEl = document.getElementById("comment-cards-grid");
+
+        commentCardFiles.forEach((fileName) => {
+            const path = `comment-cards-images/${fileName}`;
+
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = path;
+            link.textContent = path;
+            link.target = "_blank";
+            li.appendChild(link);
+            listEl.appendChild(li);
+
+            const card = document.createElement("div");
+            card.className = "asset-card";
+            const img = document.createElement("img");
+            img.src = path;
+            img.alt = `${fileName.replace(".png", "")} preview`;
+            img.loading = "lazy";
+            const caption = document.createElement("code");
+            caption.textContent = path;
+            card.appendChild(img);
+            card.appendChild(caption);
+            gridEl.appendChild(card);
+        });
+    </script>
 </body>
 </html>
