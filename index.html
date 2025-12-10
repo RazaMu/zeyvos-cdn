@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeyvos CDN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .asset-list {
+            list-style: none;
+            padding: 0;
+        }
+        .asset-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .asset-list a {
+            color: #0066cc;
+            text-decoration: none;
+            font-family: monospace;
+        }
+        .asset-list a:hover {
+            text-decoration: underline;
+        }
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .asset-card {
+            background: #f5f5f5;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .asset-card code {
+            font-family: monospace;
+            word-break: break-all;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zeyvos CDN Assets</h1>
+    <p>Available assets:</p>
+    <ul class="asset-list">
+        <li><a href="Frame_5-removebg-preview.png" target="_blank">Frame_5-removebg-preview.png</a></li>
+        <li><a href="Group_3-removebg-preview.png" target="_blank">Group_3-removebg-preview.png</a></li>
+        <li><a href="image.png" target="_blank">image.png</a></li>
+        <li><a href="login-hero.gif" target="_blank">login-hero.gif</a></li>
+        <li><a href="hero-video.mp4" target="_blank">hero-video.mp4</a></li>
+        <li><a href="tt-classic.png" target="_blank">tt-classic.png</a></li>
+        <li><a href="tt-classic-white.png" target="_blank">tt-classic-white.png</a></li>
+        <li><a href="Generic-PnP-Monitor-2025-11-29-19-40-26.mp4" target="_blank">Generic-PnP-Monitor-2025-11-29-19-40-26.mp4</a></li>
+        <li><a href="Generic-PnP-Monitor-2025-12-06-00-24-43.mp4" target="_blank">Generic-PnP-Monitor-2025-12-06-00-24-43.mp4</a></li>
+        <li><a href="Generic-PnP-Monitor-2025-12-06-00-59-49.mp4" target="_blank">Generic-PnP-Monitor-2025-12-06-00-59-49.mp4</a></li>
+    </ul>
+    
+    <h2>Preview</h2>
+    <div>
+        <h3>Frame_5-removebg-preview.png</h3>
+        <img src="Frame_5-removebg-preview.png" alt="Frame 5" style="background: #f0f0f0;">
+    </div>
+    <div>
+        <h3>Group_3-removebg-preview.png</h3>
+        <img src="Group_3-removebg-preview.png" alt="Group 3" style="background: #f0f0f0;">
+    </div>
+    <div>
+        <h3>image.png</h3>
+        <img src="image.png" alt="Image">
+    </div>
+    <div>
+        <h3>tt-classic.png</h3>
+        <img src="tt-classic.png" alt="TT Classic">
+    </div>
+    <div>
+        <h3>tt-classic-white.png</h3>
+        <img src="tt-classic-white.png" alt="TT Classic white">
+    </div>
+    <div>
+        <h3>login-hero.gif</h3>
+        <img src="login-hero.gif" alt="Login hero animation">
+    </div>
+    <div>
+        <h3>Hero video</h3>
+        <video controls style="width:100%; max-width:800px; background:#000; border-radius:6px;" preload="metadata" poster="Frame_5-removebg-preview.png">
+            <source src="hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can <a href="hero-video.mp4" target="_blank">download the MP4</a> instead.
+        </video>
+    </div>
+
+    <div>
+        <h3>Generic PnP Monitor (MP4)</h3>
+        <video controls style="width:100%; max-width:800px; background:#000; border-radius:6px;" preload="metadata">
+            <source src="Generic-PnP-Monitor-2025-11-29-19-40-26.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can <a href="Generic-PnP-Monitor-2025-11-29-19-40-26.mp4" target="_blank">download the MP4</a> instead.
+        </video>
+    </div>
+    <div>
+        <h3>Generic PnP Monitor (2025-12-06 MP4)</h3>
+        <video controls style="width:100%; max-width:800px; background:#000; border-radius:6px;" preload="metadata">
+            <source src="Generic-PnP-Monitor-2025-12-06-00-24-43.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can <a href="Generic-PnP-Monitor-2025-12-06-00-24-43.mp4" target="_blank">download the MP4</a> instead.
+        </video>
+    </div>
+    <div>
+        <h3>Generic PnP Monitor (2025-12-06 00:59 MP4)</h3>
+        <video controls style="width:100%; max-width:800px; background:#000; border-radius:6px;" preload="metadata">
+            <source src="Generic-PnP-Monitor-2025-12-06-00-59-49.mp4" type="video/mp4">
+            Your browser does not support the video tag. You can <a href="Generic-PnP-Monitor-2025-12-06-00-59-49.mp4" target="_blank">download the MP4</a> instead.
+        </video>
+    </div>
+
+    <h2>Comment Card Images</h2>
+    <p>Direct links to themed comment card assets stored under <code>comment-cards-images/</code>:</p>
+    <ul class="asset-list" id="comment-cards-list"></ul>
+    <div class="asset-grid" id="comment-cards-grid"></div>
+
+    <script>
+        const commentCardFiles = [
+            "Brutalist.png",
+            "Chat-Bubble.png",
+            "Classic-Dark.png",
+            "Classic-Light.png",
+            "Code-Editor.png",
+            "Compact-Line.png",
+            "Cyberpunk.png",
+            "Expert.png",
+            "Glass-Overlay.png",
+            "Gradient-Border.png",
+            "Handwritten.png",
+            "Minimalist.png",
+            "Neomorphism.png",
+            "Newspaper.png",
+            "Notification.png",
+            "Playful-Bubble.png",
+            "Retro-Windows.png",
+            "Review.png",
+            "RPG-Dialog.png",
+            "Terminal.png",
+            "Ticket-Stub.png",
+            "TikTok-Drawer.png",
+            "TikTok-Gift.png",
+            "TikTok-Live-Bubble.png",
+            "TikTok-Overlay.png",
+            "TikTok-Pinned.png"
+        ];
+
+        const listEl = document.getElementById("comment-cards-list");
+        const gridEl = document.getElementById("comment-cards-grid");
+
+        commentCardFiles.forEach((fileName) => {
+            const path = `comment-cards-images/${fileName}`;
+
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = path;
+            link.textContent = path;
+            link.target = "_blank";
+            li.appendChild(link);
+            listEl.appendChild(li);
+
+            const card = document.createElement("div");
+            card.className = "asset-card";
+            const img = document.createElement("img");
+            img.src = path;
+            img.alt = `${fileName.replace(".png", "")} preview`;
+            img.loading = "lazy";
+            const caption = document.createElement("code");
+            caption.textContent = path;
+            card.appendChild(img);
+            card.appendChild(caption);
+            gridEl.appendChild(card);
+        });
+    </script>
+</body>
+</html>
