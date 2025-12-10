@@ -130,66 +130,95 @@
         </video>
     </div>
 
+    <h2>Landing Assets</h2>
+    <p>Direct links to assets stored under <code>landing/assets/</code> (served on GitHub Pages):</p>
+    <ul class="asset-list" id="landing-assets-list"></ul>
+    <div class="asset-grid" id="landing-assets-grid"></div>
+
     <h2>Comment Card Images</h2>
     <p>Direct links to themed comment card assets stored under <code>comment-cards-images/</code>:</p>
     <ul class="asset-list" id="comment-cards-list"></ul>
     <div class="asset-grid" id="comment-cards-grid"></div>
 
     <script>
-        const commentCardFiles = [
-            "Brutalist.png",
-            "Chat-Bubble.png",
-            "Classic-Dark.png",
-            "Classic-Light.png",
-            "Code-Editor.png",
-            "Compact-Line.png",
-            "Cyberpunk.png",
-            "Expert.png",
-            "Glass-Overlay.png",
-            "Gradient-Border.png",
-            "Handwritten.png",
-            "Minimalist.png",
-            "Neomorphism.png",
-            "Newspaper.png",
-            "Notification.png",
-            "Playful-Bubble.png",
-            "Retro-Windows.png",
-            "Review.png",
-            "RPG-Dialog.png",
-            "Terminal.png",
-            "Ticket-Stub.png",
-            "TikTok-Drawer.png",
-            "TikTok-Gift.png",
-            "TikTok-Live-Bubble.png",
-            "TikTok-Overlay.png",
-            "TikTok-Pinned.png"
-        ];
+        const renderAssets = ({ files, basePath, listId, gridId }) => {
+            const listEl = document.getElementById(listId);
+            const gridEl = document.getElementById(gridId);
+            if (!listEl || !gridEl) return;
 
-        const listEl = document.getElementById("comment-cards-list");
-        const gridEl = document.getElementById("comment-cards-grid");
+            files.forEach((fileName) => {
+                const path = `${basePath}/${fileName}`;
 
-        commentCardFiles.forEach((fileName) => {
-            const path = `comment-cards-images/${fileName}`;
+                const li = document.createElement("li");
+                const link = document.createElement("a");
+                link.href = path;
+                link.textContent = path;
+                link.target = "_blank";
+                li.appendChild(link);
+                listEl.appendChild(li);
 
-            const li = document.createElement("li");
-            const link = document.createElement("a");
-            link.href = path;
-            link.textContent = path;
-            link.target = "_blank";
-            li.appendChild(link);
-            listEl.appendChild(li);
+                const card = document.createElement("div");
+                card.className = "asset-card";
+                const img = document.createElement("img");
+                img.src = path;
+                img.alt = `${fileName.replace(".png", "")} preview`;
+                img.loading = "lazy";
+                const caption = document.createElement("code");
+                caption.textContent = path;
+                card.appendChild(img);
+                card.appendChild(caption);
+                gridEl.appendChild(card);
+            });
+        };
 
-            const card = document.createElement("div");
-            card.className = "asset-card";
-            const img = document.createElement("img");
-            img.src = path;
-            img.alt = `${fileName.replace(".png", "")} preview`;
-            img.loading = "lazy";
-            const caption = document.createElement("code");
-            caption.textContent = path;
-            card.appendChild(img);
-            card.appendChild(caption);
-            gridEl.appendChild(card);
+        renderAssets({
+            files: [
+                "312f673a3ff0b752ace19d2d2195e258d0fcfe81.png",
+                "33c3683da9105fa17ffc7b267b86a33e1338bfd4.png",
+                "635a3595e624b3a160db7f390aa47d44456fbb60.png",
+                "6bb92609e17cd1bc892e282a9bbdbb75bf33efe7.png",
+                "706aa983d772a4d6cd933243d2e5be096eb10cd2.png",
+                "9a0b9ecb39b44e0d65455fc7e2ce02be1b854c6e.png",
+                "da35cd9db0f3ebda5e243c0d4f6a4dd9fe92590e.png",
+                "f05cbdc3196901193b3de4ffede13dbc8b983d29.png"
+            ],
+            basePath: "landing/assets",
+            listId: "landing-assets-list",
+            gridId: "landing-assets-grid"
+        });
+
+        renderAssets({
+            files: [
+                "Brutalist.png",
+                "Chat-Bubble.png",
+                "Classic-Dark.png",
+                "Classic-Light.png",
+                "Code-Editor.png",
+                "Compact-Line.png",
+                "Cyberpunk.png",
+                "Expert.png",
+                "Glass-Overlay.png",
+                "Gradient-Border.png",
+                "Handwritten.png",
+                "Minimalist.png",
+                "Neomorphism.png",
+                "Newspaper.png",
+                "Notification.png",
+                "Playful-Bubble.png",
+                "Retro-Windows.png",
+                "Review.png",
+                "RPG-Dialog.png",
+                "Terminal.png",
+                "Ticket-Stub.png",
+                "TikTok-Drawer.png",
+                "TikTok-Gift.png",
+                "TikTok-Live-Bubble.png",
+                "TikTok-Overlay.png",
+                "TikTok-Pinned.png"
+            ],
+            basePath: "comment-cards-images",
+            listId: "comment-cards-list",
+            gridId: "comment-cards-grid"
         });
     </script>
 </body>
